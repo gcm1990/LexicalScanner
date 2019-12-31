@@ -1,3 +1,7 @@
+	Test the code my the following commands:
+	1. make
+	2. project1script test_fn
+	
 	The general idea of project 1 is to read a file character by character to build up a lexeme. Once the lexeme is complete, generate and display the token. The file is passed as an argument to proj1.java through the script. The code checks to see that the file exists, and then it begins scanning. 
 	The scanner reads the characters in the following way: First, get the next line of the file if it exists. Then with a for loop, go through the line character by character.
 	The code is basically a big set of if else statements. The character can be placed into any of the following categories: single characters, whitespace, comparisons, operators and comments, numbers, or IDs(which may become a keyword later).
