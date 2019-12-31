@@ -1,0 +1,13 @@
+	The general idea of project 1 is to read a file character by character to build up a lexeme. Once the lexeme is complete, generate and display the token. The file is passed as an argument to proj1.java through the script. The code checks to see that the file exists, and then it begins scanning. 
+	The scanner reads the characters in the following way: First, get the next line of the file if it exists. Then with a for loop, go through the line character by character.
+	The code is basically a big set of if else statements. The character can be placed into any of the following categories: single characters, whitespace, comparisons, operators and comments, numbers, or IDs(which may become a keyword later).
+	The single character is the easiest. Once the character is read, the scanner has everything it needs to print the symbol and continue processing.
+	The whitespace continues.
+	The comparison can be <=> with an optional =. So we just lookahead to the next character. If it's an =, add it, make sure the for loop knows to skip that next character if it's added, and we have everything we need. 
+	Comparison can also be !=, so if a ! is read, it's an error unless the next character is an =.
+	The operators and comments are processed together because they use the same symbols. E.g: a / is a division symbol, but with an additional / or a *, it becomes a comment. So if the scanner gets a /, then check the next character to see if it's a * or /. If it's a /, just break. If it's a *, let the scanner know this is a comment with the comment boolean value. If a * is read first on the other hand, check to see if the next character is a /, in which case the scanner needs to know that after this token is read, turn the comment variable off. 
+	If it's a number, keep adding to the lexeme as long as it's a number. 
+	If it's a letter, keep adding to the lexeme as long as it's a letter. When the lexeme is complete, check to see if it's a keyword, lest it's an ID. 
+	If the character does not fall into any of the categories above, it recieves the error token. 
+	After the token and lexeme are created, print them, unless it's a comment. Besides, if the token is symbol, just print the lexeme, and omit the token. 
+	After every loop, clear the token and the lexeme, and then resume reading. 
