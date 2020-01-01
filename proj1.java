@@ -23,7 +23,6 @@ public class proj1{
 		String lexeme="";
 		String S="";
 		int n=0;
-		float t=.02432234;
 		String token="";
 		String A="+-{}[](),;";
 		String B="<=>";
